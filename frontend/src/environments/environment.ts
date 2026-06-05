@@ -1,0 +1,6 @@
+// src/environments/environment.ts
+// Development environment — points to local Django server
+export const environment = {
+  production: false,
+  apiUrl: 'http://localhost:8000/api'
+};

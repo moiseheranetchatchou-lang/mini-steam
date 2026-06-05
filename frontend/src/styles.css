@@ -1,0 +1,94 @@
+/* src/styles.css — Global styles for Mini Steam */
+
+/* ── Reset & Base ── */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Motiva Sans', 'Segoe UI', Arial, sans-serif;
+  background: #16202d;
+  color: #c6d4df;
+}
+
+/* ── Custom Scrollbar (Steam-like dark look) ── */
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: #1b2838; }
+::-webkit-scrollbar-thumb { background: #2a475e; border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: #66c0f4; }
+
+/* ── Form controls dark theme override ── */
+.form-control:focus,
+.form-select:focus {
+  border-color: #66c0f4 !important;
+  box-shadow: 0 0 0 0.2rem rgba(102, 192, 244, 0.2) !important;
+  background-color: #16202d !important;
+  color: #c6d4df !important;
+}
+
+/* ── Buttons ── */
+.btn-outline-secondary {
+  color: #8f98a0;
+  border-color: #2a475e;
+}
+.btn-outline-secondary:hover {
+  background: #2a475e;
+  color: #c6d4df;
+  border-color: #2a475e;
+}
+
+/* ── Navbar active link ── */
+.nav-link.active {
+  color: #66c0f4 !important;
+}
+
+/* ── Cards ── */
+.card {
+  border-radius: 8px !important;
+}
+
+/* ── Smooth page transitions ── */
+router-outlet + * {
+  animation: fadeIn 0.2s ease-in;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(4px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ── Spinner colour override ── */
+.spinner-border {
+  color: #66c0f4;
+}
+
+/* ── Alert dark theme ── */
+.alert-danger {
+  background: rgba(198, 40, 40, 0.15);
+  border-color: #c62828;
+  color: #ef9a9a;
+}
+
+.alert-success {
+  background: rgba(27, 94, 32, 0.2);
+  border-color: #388e3c;
+  color: #a5d6a7;
+}
+
+/* ── Pagination dark theme ── */
+.page-link {
+  background-color: #1e2a3a;
+  border-color: #2a475e;
+  color: #66c0f4;
+}
+.page-link:hover {
+  background-color: #2a475e;
+  border-color: #66c0f4;
+  color: #ffffff;
+}
+.page-item.disabled .page-link {
+  background-color: #1b2838;
+  border-color: #2a475e;
+  color: #4a5a6a;
+}

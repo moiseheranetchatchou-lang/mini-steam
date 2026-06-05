@@ -1,0 +1,36 @@
+# ── Python / Django ────────────────────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+.env                  # ← NEVER commit this
+*.env
+db.sqlite3
+media/
+staticfiles/
+*.log
+
+# Virtual environments
+venv/
+env/
+.venv/
+ENV/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# ── Node / Angular ──────────────────────────────────────────────────────────────
+node_modules/
+dist/
+.angular/
+
+# Environment files
+src/environments/environment.production.ts.local
+
+# OS
+.DS_Store
+Thumbs.db
