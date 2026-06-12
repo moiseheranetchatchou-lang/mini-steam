@@ -28,6 +28,7 @@ ALLOWED_HOSTS = config(
 # ─── Installed Apps ────────────────────────────────────────────────────────────
 INSTALLED_APPS = [
     # Django built-ins
+    'jazzmin'
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -149,3 +150,53 @@ CORS_ALLOWED_ORIGINS = config(
 
 # Allow cookies to be sent cross-origin (needed for some auth flows)
 CORS_ALLOW_CREDENTIALS = True
+
+JAZZMIN_SETTINGS = {
+    "site_title": "Mini Steam Admin",
+    "site_header": "Mini Steam",
+    "site_brand": "Mini Steam",
+    # Logo pour le menu (optionnel)
+    "site_logo": None, 
+    "welcome_sign": "Bienvenue sur l'administration de Mini Steam",
+    "search_model": ["auth.User", "games.Game"], # Adaptez selon vos modèles
+    "show_ui_builder": True, # Cela vous permet de changer les couleurs en direct !
+    
+    # Thème de navigation
+    "navigation_expanded": True,
+    "topmenu_links": [
+        {"name": "Accueil",  "url": "admin:index", "permissions": ["auth.view_user"]},
+        {"name": "Voir le site", "url": "https://votre-lien-vercel.app", "new_window": True},
+    ],
+}
+
+JAZZMIN_UI_TWEAKS = {
+    "navbar_small_text": False,
+    "footer_small_text": False,
+    "body_small_text": False,
+    "brand_small_text": False,
+    "brand_colour": "navbar-dark",
+    "accent": "accent-primary",
+    "navbar": "navbar-dark", # Barre du haut sombre
+    "no_navbar_border": False,
+    "navbar_fixed": False,
+    "layout_boxed": False,
+    "footer_fixed": False,
+    "sidebar_fixed": False,
+    "sidebar": "sidebar-dark-primary", # Menu latéral sombre avec surbrillance bleue
+    "sidebar_nav_small_text": False,
+    "sidebar_disable_expand": False,
+    "sidebar_nav_child_indent": False,
+    "sidebar_nav_compact_style": False,
+    "sidebar_nav_legacy_style": False,
+    "sidebar_nav_flat_style": False,
+    "theme": "darkly", # C'est le thème qui se rapproche le plus de votre image (Bootswatch)
+    "dark_mode_theme": "darkly",
+    "button_classes": {
+        "primary": "btn-primary",
+        "secondary": "btn-secondary",
+        "info": "btn-info",
+        "warning": "btn-warning",
+        "danger": "btn-danger",
+        "success": "btn-success"
+    }
+}
